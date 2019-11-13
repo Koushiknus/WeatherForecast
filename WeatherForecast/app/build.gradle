@@ -19,9 +19,19 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
+
+        debug {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), '../proguard.cfg'
+            buildConfigField 'String', 'BASE_API_KEY', '"key=6e7ce79d0dc147c180f214547191111"'
+        }
+
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField 'String', 'BASE_API_KEY', '"key=6e7ce79d0dc147c180f214547191111"'
+
         }
     }
 }
