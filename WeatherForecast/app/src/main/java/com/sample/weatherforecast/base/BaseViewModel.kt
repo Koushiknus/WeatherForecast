@@ -5,6 +5,7 @@ import com.sample.weatherforecast.di.AppModule
 import com.sample.weatherforecast.di.DaggerViewModelInjector
 import com.sample.weatherforecast.di.RepositoryModule
 import com.sample.weatherforecast.di.ViewModelInjector
+import com.sample.weatherforecast.ui.GetWeatherViewModel
 
 abstract  class BaseViewModel : ViewModel() {
 
@@ -20,7 +21,7 @@ abstract  class BaseViewModel : ViewModel() {
 
     private fun inject(){
         when (this) {
-
+            is GetWeatherViewModel -> injector.inject(this)
         }
     }
 }
